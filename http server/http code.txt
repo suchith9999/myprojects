@@ -1,0 +1,21 @@
+import http.server
+import socketserver
+import socket
+import segno
+
+hostname = socket.gethostname()
+ip = socket.gethostbyname(hostname)
+# ip = ('http://' + ip + ':9999/')
+
+
+PORT = 9999
+
+handler = http.server.SimpleHTTPRequestHandler
+
+with socketserver.TCPServer(("", PORT), handler) as httpd:
+    qr = ('http://' + ip + ':9999/')
+    qrcode = segno.make_qr(qr)
+    qrcode.save('ip.png', scale=10)
+    print("Server started at localhost:" + qr)
+    qrcode.show()
+    httpd.serve_forever()
