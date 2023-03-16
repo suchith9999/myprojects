@@ -100,3 +100,11 @@ def is_even(x):
 
 even = list(filter(is_even, nums))
 print(even)
+my_even = [x for x in range(100) if x >= 2 and x % 2 == 0]
+print(my_even)
+my_odd = [x for x in range(100) if x >= 1 and x % 2 != 0]
+print(my_odd)
+y = range(100)
+my_prime = [x for x in range(100) if x >= 1 and x % 2 != 0 and x % 3 != 0]
+
+print(my_prime)
