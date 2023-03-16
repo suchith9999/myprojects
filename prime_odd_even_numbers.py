@@ -97,7 +97,7 @@ def is_even(x):
             return True
         return False
 
-
+#list comprehension
 even = list(filter(is_even, nums))
 print(even)
 my_even = [x for x in range(100) if x >= 2 and x % 2 == 0]
